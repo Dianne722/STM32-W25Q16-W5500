@@ -3,7 +3,7 @@
 <title>Static Call Graph - [C8t6_W5500\C8t6_W5500.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image C8t6_W5500\C8t6_W5500.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Wed Nov 13 11:13:40 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Wed Nov 13 11:32:53 2024
 <BR><P>
 <H3>Maximum Stack Usage =        168 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -463,7 +463,6 @@ Global Symbols
 <P><STRONG><a name="[77]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(i.HAL_GPIO_WritePin))
 <BR><BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W5500Init
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_select
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_deselect
 </UL>
@@ -582,8 +581,8 @@ Global Symbols
 <P><STRONG><a name="[76]"></a>MX_GPIO_Init</STRONG> (Thumb, 200 bytes, Stack size 48 bytes, gpio.o(i.MX_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = MX_GPIO_Init &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -656,9 +655,9 @@ Global Symbols
 <P><STRONG><a name="[7f]"></a>W5500Init</STRONG> (Thumb, 116 bytes, Stack size 32 bytes, w5500_spi.o(i.W5500Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = W5500Init &rArr; ctlwizchip &rArr; wizchip_init &rArr; wizchip_sw_reset &rArr; WIZCHIP_READ_BUF
 </UL>
-<BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reg_wizchip_spiburst_cbfunc
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reg_wizchip_spi_cbfunc
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reg_wizchip_cs_cbfunc
@@ -670,71 +669,72 @@ Global Symbols
 <P><STRONG><a name="[85]"></a>WIZCHIP_READ</STRONG> (Thumb, 84 bytes, Stack size 24 bytes, w5500.o(i.WIZCHIP_READ))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = WIZCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;listen
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_RX_RSR
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_RX_RSR
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W5500Init
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcps
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_send_data
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_data
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_TX_FSR
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphypmode
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_reset
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_getphypmode
-<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_getphylink
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_getphyconf
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
-<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setnetmode
-<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_gettimeout
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getnetmode
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getinterruptmask
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getinterrupt
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcpc
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_send_data
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_data
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_TX_FSR
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphypmode
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_reset
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_getphypmode
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_getphylink
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_getphyconf
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setnetmode
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_gettimeout
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getnetmode
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getinterruptmask
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getinterrupt
 </UL>
 
-<P><STRONG><a name="[a6]"></a>WIZCHIP_READ_BUF</STRONG> (Thumb, 112 bytes, Stack size 32 bytes, w5500.o(i.WIZCHIP_READ_BUF))
+<P><STRONG><a name="[a7]"></a>WIZCHIP_READ_BUF</STRONG> (Thumb, 112 bytes, Stack size 32 bytes, w5500.o(i.WIZCHIP_READ_BUF))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = WIZCHIP_READ_BUF
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_data
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getnetinfo
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_data
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getnetinfo
 </UL>
 
 <P><STRONG><a name="[87]"></a>WIZCHIP_WRITE</STRONG> (Thumb, 90 bytes, Stack size 24 bytes, w5500.o(i.WIZCHIP_WRITE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = WIZCHIP_WRITE
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;listen
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcps
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_send_data
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_data
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphypmode
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphyconf
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_reset
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
-<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_settimeout
-<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setnetmode
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setinterruptmask
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_init
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_clrinterrupt
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcpc
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_send_data
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_data
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphypmode
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphyconf
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_reset
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_settimeout
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setnetmode
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setinterruptmask
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_init
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_clrinterrupt
 </UL>
 
-<P><STRONG><a name="[a7]"></a>WIZCHIP_WRITE_BUF</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, w5500.o(i.WIZCHIP_WRITE_BUF))
+<P><STRONG><a name="[89]"></a>WIZCHIP_WRITE_BUF</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, w5500.o(i.WIZCHIP_WRITE_BUF))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = WIZCHIP_WRITE_BUF
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_send_data
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setnetinfo
+<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_send_data
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setnetinfo
 </UL>
 
 <P><STRONG><a name="[86]"></a>close</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, socket.o(i.close))
@@ -743,25 +743,34 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;listen
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcps
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcpc
 </UL>
 
-<P><STRONG><a name="[88]"></a>ctlnetwork</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, wizchip_conf.o(i.ctlnetwork))
+<P><STRONG><a name="[88]"></a>connect</STRONG> (Thumb, 258 bytes, Stack size 24 bytes, socket.o(i.connect))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = connect &rArr; WIZCHIP_WRITE
+</UL>
+<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE_BUF
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcpc
+</UL>
+
+<P><STRONG><a name="[8a]"></a>ctlnetwork</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, wizchip_conf.o(i.ctlnetwork))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = ctlnetwork &rArr; wizchip_gettimeout &rArr; WIZCHIP_READ
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_settimeout
-<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setnetmode
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setnetinfo
-<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_gettimeout
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getnetmode
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getnetinfo
+<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_settimeout
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setnetmode
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setnetinfo
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_gettimeout
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getnetmode
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getnetinfo
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;network_init
+<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;network_init
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -770,71 +779,61 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphypmode
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphyconf
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_reset
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_getphypmode
-<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_getphylink
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_getphyconf
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setinterruptmask
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_init
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getinterruptmask
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getinterrupt
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_clrinterrupt
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphypmode
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphyconf
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_reset
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_getphypmode
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_getphylink
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_getphyconf
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setinterruptmask
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_init
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getinterruptmask
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getinterrupt
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_clrinterrupt
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W5500Init
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;network_init
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;network_init
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9b]"></a>disconnect</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, socket.o(i.disconnect))
+<P><STRONG><a name="[9d]"></a>disconnect</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, socket.o(i.disconnect))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = disconnect &rArr; close &rArr; WIZCHIP_WRITE
 </UL>
 <BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcps
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcpc
 </UL>
 
-<P><STRONG><a name="[9c]"></a>getSn_RX_RSR</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, w5500.o(i.getSn_RX_RSR))
+<P><STRONG><a name="[9e]"></a>getSn_RX_RSR</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, w5500.o(i.getSn_RX_RSR))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = getSn_RX_RSR &rArr; WIZCHIP_READ
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcps
+<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcpc
 </UL>
 
-<P><STRONG><a name="[9d]"></a>getSn_TX_FSR</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, w5500.o(i.getSn_TX_FSR))
+<P><STRONG><a name="[9f]"></a>getSn_TX_FSR</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, w5500.o(i.getSn_TX_FSR))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = getSn_TX_FSR &rArr; WIZCHIP_READ
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
+<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
 </UL>
 
-<P><STRONG><a name="[9e]"></a>listen</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, socket.o(i.listen))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = listen &rArr; close &rArr; WIZCHIP_WRITE
+<P><STRONG><a name="[a0]"></a>loopback_tcpc</STRONG> (Thumb, 200 bytes, Stack size 32 bytes, main.o(i.loopback_tcpc))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = loopback_tcpc &rArr; recv &rArr; wiz_recv_data &rArr; WIZCHIP_READ_BUF
 </UL>
-<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
-</UL>
-<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcps
-</UL>
-
-<P><STRONG><a name="[9f]"></a>loopback_tcps</STRONG> (Thumb, 184 bytes, Stack size 24 bytes, main.o(i.loopback_tcps))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = loopback_tcps &rArr; recv &rArr; wiz_recv_data &rArr; WIZCHIP_READ_BUF
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;listen
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_RX_RSR
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
+<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_RX_RSR
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
@@ -842,43 +841,42 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5d]"></a>main</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, main.o(i.main))
+<P><STRONG><a name="[5d]"></a>main</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = main &rArr; network_init &rArr; ctlwizchip &rArr; wizchip_init &rArr; wizchip_sw_reset &rArr; WIZCHIP_READ_BUF
 </UL>
 <BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W5500Init
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_SPI1_Init
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;network_init
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcps
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;network_init
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcpc
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[a3]"></a>network_init</STRONG> (Thumb, 36 bytes, Stack size 40 bytes, main.o(i.network_init))
+<P><STRONG><a name="[a4]"></a>network_init</STRONG> (Thumb, 36 bytes, Stack size 40 bytes, main.o(i.network_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = network_init &rArr; ctlwizchip &rArr; wizchip_init &rArr; wizchip_sw_reset &rArr; WIZCHIP_READ_BUF
 </UL>
 <BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a0]"></a>recv</STRONG> (Thumb, 224 bytes, Stack size 48 bytes, socket.o(i.recv))
+<P><STRONG><a name="[a1]"></a>recv</STRONG> (Thumb, 224 bytes, Stack size 48 bytes, socket.o(i.recv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = recv &rArr; wiz_recv_data &rArr; WIZCHIP_READ_BUF
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_RX_RSR
+<BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_RX_RSR
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_data
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_TX_FSR
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_data
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_TX_FSR
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcps
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcpc
 </UL>
 
 <P><STRONG><a name="[83]"></a>reg_wizchip_cris_cbfunc</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, wizchip_conf.o(i.reg_wizchip_cris_cbfunc))
@@ -901,27 +899,27 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W5500Init
 </UL>
 
-<P><STRONG><a name="[a1]"></a>send</STRONG> (Thumb, 278 bytes, Stack size 40 bytes, socket.o(i.send))
+<P><STRONG><a name="[a2]"></a>send</STRONG> (Thumb, 278 bytes, Stack size 40 bytes, socket.o(i.send))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = send &rArr; wiz_send_data &rArr; WIZCHIP_WRITE
 </UL>
 <BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_send_data
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_TX_FSR
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_send_data
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_TX_FSR
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcps
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcpc
 </UL>
 
-<P><STRONG><a name="[a2]"></a>socket</STRONG> (Thumb, 276 bytes, Stack size 32 bytes, socket.o(i.socket))
+<P><STRONG><a name="[a3]"></a>socket</STRONG> (Thumb, 276 bytes, Stack size 32 bytes, socket.o(i.socket))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = socket &rArr; close &rArr; WIZCHIP_WRITE
 </UL>
 <BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ_BUF
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ_BUF
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcps
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loopback_tcpc
 </UL>
 
 <P><STRONG><a name="[48]"></a>w5500_enter_critical</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, w5500_spi.o(i.w5500_enter_critical))
@@ -930,24 +928,24 @@ Global Symbols
 <P><STRONG><a name="[47]"></a>w5500_exit_critical</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, w5500_spi.o(i.w5500_exit_critical))
 <BR>[Address Reference Count : 1]<UL><LI> w5500_spi.o(i.W5500Init)
 </UL>
-<P><STRONG><a name="[a4]"></a>wiz_recv_data</STRONG> (Thumb, 96 bytes, Stack size 32 bytes, w5500.o(i.wiz_recv_data))
+<P><STRONG><a name="[a5]"></a>wiz_recv_data</STRONG> (Thumb, 96 bytes, Stack size 32 bytes, w5500.o(i.wiz_recv_data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = wiz_recv_data &rArr; WIZCHIP_READ_BUF
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ_BUF
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ_BUF
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
+<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
 </UL>
 
-<P><STRONG><a name="[a5]"></a>wiz_send_data</STRONG> (Thumb, 96 bytes, Stack size 32 bytes, w5500.o(i.wiz_send_data))
+<P><STRONG><a name="[a6]"></a>wiz_send_data</STRONG> (Thumb, 96 bytes, Stack size 32 bytes, w5500.o(i.wiz_send_data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = wiz_send_data &rArr; WIZCHIP_WRITE
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE_BUF
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE_BUF
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
 </UL>
 
 <P><STRONG><a name="[51]"></a>wizchip_bus_readdata</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, wizchip_conf.o(i.wizchip_bus_readdata))
@@ -956,7 +954,7 @@ Global Symbols
 <P><STRONG><a name="[52]"></a>wizchip_bus_writedata</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, wizchip_conf.o(i.wizchip_bus_writedata))
 <BR>[Address Reference Count : 1]<UL><LI> wizchip_conf.o(.data)
 </UL>
-<P><STRONG><a name="[91]"></a>wizchip_clrinterrupt</STRONG> (Thumb, 58 bytes, Stack size 24 bytes, wizchip_conf.o(i.wizchip_clrinterrupt))
+<P><STRONG><a name="[93]"></a>wizchip_clrinterrupt</STRONG> (Thumb, 58 bytes, Stack size 24 bytes, wizchip_conf.o(i.wizchip_clrinterrupt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = wizchip_clrinterrupt &rArr; WIZCHIP_WRITE
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
@@ -985,7 +983,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> w5500_spi.o(i.W5500Init)
 </UL>
-<P><STRONG><a name="[92]"></a>wizchip_getinterrupt</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_getinterrupt))
+<P><STRONG><a name="[94]"></a>wizchip_getinterrupt</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_getinterrupt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = wizchip_getinterrupt &rArr; WIZCHIP_READ
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
@@ -993,7 +991,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
 </UL>
 
-<P><STRONG><a name="[94]"></a>wizchip_getinterruptmask</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_getinterruptmask))
+<P><STRONG><a name="[96]"></a>wizchip_getinterruptmask</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_getinterruptmask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = wizchip_getinterruptmask &rArr; WIZCHIP_READ
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
@@ -1001,35 +999,35 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
 </UL>
 
-<P><STRONG><a name="[8a]"></a>wizchip_getnetinfo</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_getnetinfo))
+<P><STRONG><a name="[8c]"></a>wizchip_getnetinfo</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_getnetinfo))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = wizchip_getnetinfo &rArr; WIZCHIP_READ_BUF
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ_BUF
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ_BUF
 </UL>
-<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
+<BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
 </UL>
 
-<P><STRONG><a name="[8c]"></a>wizchip_getnetmode</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, wizchip_conf.o(i.wizchip_getnetmode))
+<P><STRONG><a name="[8e]"></a>wizchip_getnetmode</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, wizchip_conf.o(i.wizchip_getnetmode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = wizchip_getnetmode &rArr; WIZCHIP_READ
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
+<BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
 </UL>
 
-<P><STRONG><a name="[8e]"></a>wizchip_gettimeout</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, wizchip_conf.o(i.wizchip_gettimeout))
+<P><STRONG><a name="[90]"></a>wizchip_gettimeout</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, wizchip_conf.o(i.wizchip_gettimeout))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = wizchip_gettimeout &rArr; WIZCHIP_READ
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
+<BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
 </UL>
 
-<P><STRONG><a name="[90]"></a>wizchip_init</STRONG> (Thumb, 122 bytes, Stack size 24 bytes, wizchip_conf.o(i.wizchip_init))
+<P><STRONG><a name="[92]"></a>wizchip_init</STRONG> (Thumb, 122 bytes, Stack size 24 bytes, wizchip_conf.o(i.wizchip_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = wizchip_init &rArr; wizchip_sw_reset &rArr; WIZCHIP_READ_BUF
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
 </UL>
@@ -1053,7 +1051,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> w5500_spi.o(i.W5500Init)
 </UL>
-<P><STRONG><a name="[93]"></a>wizchip_setinterruptmask</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_setinterruptmask))
+<P><STRONG><a name="[95]"></a>wizchip_setinterruptmask</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_setinterruptmask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = wizchip_setinterruptmask &rArr; WIZCHIP_WRITE
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
@@ -1061,29 +1059,29 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
 </UL>
 
-<P><STRONG><a name="[89]"></a>wizchip_setnetinfo</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_setnetinfo))
+<P><STRONG><a name="[8b]"></a>wizchip_setnetinfo</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_setnetinfo))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = wizchip_setnetinfo &rArr; WIZCHIP_WRITE_BUF
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE_BUF
+<BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE_BUF
 </UL>
-<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
+<BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
 </UL>
 
-<P><STRONG><a name="[8b]"></a>wizchip_setnetmode</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_setnetmode))
+<P><STRONG><a name="[8d]"></a>wizchip_setnetmode</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_setnetmode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = wizchip_setnetmode &rArr; WIZCHIP_WRITE
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
+<BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
 </UL>
 
-<P><STRONG><a name="[8d]"></a>wizchip_settimeout</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_settimeout))
+<P><STRONG><a name="[8f]"></a>wizchip_settimeout</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizchip_settimeout))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = wizchip_settimeout &rArr; WIZCHIP_WRITE
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 </UL>
-<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
+<BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlnetwork
 </UL>
 
 <P><STRONG><a name="[4f]"></a>wizchip_spi_readburst</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wizchip_conf.o(i.wizchip_spi_readburst))
@@ -1098,16 +1096,16 @@ Global Symbols
 <P><STRONG><a name="[4e]"></a>wizchip_spi_writebyte</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wizchip_conf.o(i.wizchip_spi_writebyte))
 <BR>[Address Reference Count : 1]<UL><LI> wizchip_conf.o(i.reg_wizchip_spi_cbfunc)
 </UL>
-<P><STRONG><a name="[8f]"></a>wizchip_sw_reset</STRONG> (Thumb, 116 bytes, Stack size 40 bytes, wizchip_conf.o(i.wizchip_sw_reset))
+<P><STRONG><a name="[91]"></a>wizchip_sw_reset</STRONG> (Thumb, 116 bytes, Stack size 40 bytes, wizchip_conf.o(i.wizchip_sw_reset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = wizchip_sw_reset &rArr; WIZCHIP_READ_BUF
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE_BUF
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ_BUF
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE_BUF
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ_BUF
 </UL>
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_init
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_init
 </UL>
 
 <P><STRONG><a name="[43]"></a>wizchip_write</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, w5500_spi.o(i.wizchip_write))
@@ -1124,7 +1122,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> w5500_spi.o(i.W5500Init)
 </UL>
-<P><STRONG><a name="[97]"></a>wizphy_getphyconf</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizphy_getphyconf))
+<P><STRONG><a name="[99]"></a>wizphy_getphyconf</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizphy_getphyconf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = wizphy_getphyconf &rArr; WIZCHIP_READ
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
@@ -1132,7 +1130,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
 </UL>
 
-<P><STRONG><a name="[9a]"></a>wizphy_getphylink</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizphy_getphylink))
+<P><STRONG><a name="[9c]"></a>wizphy_getphylink</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizphy_getphylink))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = wizphy_getphylink &rArr; WIZCHIP_READ
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
@@ -1140,7 +1138,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
 </UL>
 
-<P><STRONG><a name="[99]"></a>wizphy_getphypmode</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizphy_getphypmode))
+<P><STRONG><a name="[9b]"></a>wizphy_getphypmode</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizphy_getphypmode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = wizphy_getphypmode &rArr; WIZCHIP_READ
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
@@ -1148,32 +1146,32 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
 </UL>
 
-<P><STRONG><a name="[95]"></a>wizphy_reset</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizphy_reset))
+<P><STRONG><a name="[97]"></a>wizphy_reset</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizphy_reset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = wizphy_reset &rArr; WIZCHIP_WRITE
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
 </UL>
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphypmode
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphyconf
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphypmode
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_setphyconf
 </UL>
 
-<P><STRONG><a name="[96]"></a>wizphy_setphyconf</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizphy_setphyconf))
+<P><STRONG><a name="[98]"></a>wizphy_setphyconf</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, wizchip_conf.o(i.wizphy_setphyconf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = wizphy_setphyconf &rArr; wizphy_reset &rArr; WIZCHIP_WRITE
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_reset
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_reset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
 </UL>
 
-<P><STRONG><a name="[98]"></a>wizphy_setphypmode</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, wizchip_conf.o(i.wizphy_setphypmode))
+<P><STRONG><a name="[9a]"></a>wizphy_setphypmode</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, wizchip_conf.o(i.wizphy_setphypmode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = wizphy_setphypmode &rArr; wizphy_reset &rArr; WIZCHIP_WRITE
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_reset
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizphy_reset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctlwizchip
 </UL>

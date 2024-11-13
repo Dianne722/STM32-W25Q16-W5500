@@ -33,8 +33,8 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 /* USER CODE BEGIN PTD */
-uint8_t destination_ip[]={192,168,1,2}; //远程主机地址
-uint16_t destination_port = 5000;        //远程主机端口
+uint8_t dest_ip[4] = {10, 1, 1, 144};//远程主机地址
+uint16_t dest_port = 	5000;//远程主机接口
 
 #define SOCK_TCPC       0
 #define SOCK_TCPS       1
@@ -72,7 +72,7 @@ uint8_t receive_buff[RECEIVE_BUFF_SIZE];
 /* USER CODE END PTD */
 
   
-static void PHYStatusCheck(void);
+//static void PHYStatusCheck(void);
 //static void PrintPHYConf(void);
 	void network_init(void);
 	void my_ip_conflict(void);
@@ -157,12 +157,11 @@ int main(void)
  
     while(1)
     {
-			int32_t ret;
+			//int32_t ret;
 		/* Loopback Test */
 		// TCP server loopback test
-		if( (ret = loopback_tcps(SOCK_TCPS, gDATABUF, 5000)) < 0) {
-			//printf("SOCKET ERROR : %ld\r\n", ret);
-	}
+		//TCP客户端回环测试
+		loopback_tcpc(SOCK_TCPS, gDATABUF, dest_ip, dest_port);
 }
 }
   /* USER CODE END 2 */
@@ -304,6 +303,93 @@ int32_t loopback_tcps(uint8_t sn, uint8_t* buf, uint16_t port)
          break;
       default:
          break;
+   }
+   return 1;
+}
+
+/**
+  * @brief  TCP客户端事件处理函数
+  */
+int32_t loopback_tcpc(uint8_t sn, uint8_t* buf, uint8_t* destip, uint16_t destport)
+{
+   int32_t ret; // return value for SOCK_ERRORs
+   uint16_t size = 0, sentsize=0;
+ 
+   // Port number for TCP client (will be increased)
+   uint16_t any_port = 	5000;
+ 
+   // Socket Status Transitions
+   // Check the W5500 Socket n status register (Sn_SR, The 'Sn_SR' controlled by Sn_CR command or Packet send/recv status)
+   switch(getSn_SR(sn))
+   {
+      case SOCK_ESTABLISHED :
+         if(getSn_IR(sn) & Sn_IR_CON)	// Socket n interrupt register mask; TCP CON interrupt = connection with peer is successful
+         {
+#ifdef _LOOPBACK_DEBUG_
+			//printf("%d:Connected to - %d.%d.%d.%d : %d\r\n",sn, destip[0], destip[1], destip[2], destip[3], destport);
+#endif
+			setSn_IR(sn, Sn_IR_CON);  // this interrupt should be write the bit cleared to '1'
+         }
+ 
+         //
+         // Data Transaction Parts; Handle the [data receive and send] process
+         //
+		 if((size = getSn_RX_RSR(sn)) > 0) // Sn_RX_RSR: Socket n Received Size Register, Receiving data length
+         {
+			if(size > DATA_BUF_SIZE) size = DATA_BUF_SIZE; // DATA_BUF_SIZE means user defined buffer size (array)
+			ret = recv(sn, buf, size); // Data Receive process (H/W Rx socket buffer -> User's buffer)
+ 
+			if(ret <= 0) return ret; // If the received data length <= 0, receive failed and process end
+			size = (uint16_t) ret;
+			sentsize = 0;
+ 
+			// Data sentsize control
+			while(size != sentsize)
+			{
+				ret = send(sn, buf+sentsize, size-sentsize); // Data send process (User's buffer -> Destination through H/W Tx socket buffer)
+				
+				//printf("%s\r\n",buf);
+				
+				if(ret < 0) // Send Error occurred (sent data length < 0)
+				{
+					close(sn); // socket close
+					return ret;
+				}
+				sentsize += ret; // Don't care SOCKERR_BUSY, because it is zero.
+			}
+         }
+		 //
+         break;
+ 
+      case SOCK_CLOSE_WAIT :
+#ifdef _LOOPBACK_DEBUG_
+         //printf("%d:CloseWait\r\n",sn);
+#endif
+         if((ret=disconnect(sn)) != SOCK_OK) return ret;
+#ifdef _LOOPBACK_DEBUG_
+        // printf("%d:Socket Closed\r\n", sn);
+#endif
+         break;
+ 
+      case SOCK_INIT :
+#ifdef _LOOPBACK_DEBUG_
+    	 //printf("%d:Try to connect to the %d.%d.%d.%d : %d\r\n", sn, destip[0], destip[1], destip[2], destip[3], destport);
+#endif
+    	 if( (ret = connect(sn, destip, destport)) != SOCK_OK) return ret;	//	Try to TCP connect to the TCP server (destination)
+         break;
+ 
+      case SOCK_CLOSED:
+    	  close(sn);
+    	  if((ret=socket(sn, Sn_MR_TCP, any_port++, SF_TCP_NODELAY)) != sn) return ret; // TCP socket open with 'any_port' port number
+#ifdef _LOOPBACK_DEBUG_
+    	 //printf("%d:TCP client loopback start\r\n",sn);
+         //printf("%d:Socket opened\r\n",sn);
+#endif
+         break;
+      default:
+			{
+         break;
+			}
    }
    return 1;
 }
