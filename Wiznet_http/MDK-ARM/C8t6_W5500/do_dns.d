@@ -1,0 +1,9 @@
+c8t6_w5500\do_dns.o: User\do_dns.c
+c8t6_w5500\do_dns.o: User\do_dns.h
+c8t6_w5500\do_dns.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+c8t6_w5500\do_dns.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+c8t6_w5500\do_dns.o: .\User\ioLibrary_Driver\Internet\DNS\dns.h
+c8t6_w5500\do_dns.o: .\User\ioLibrary_Driver\Ethernet\wizchip_conf.h
+c8t6_w5500\do_dns.o: .\User\ioLibrary_Driver\Ethernet\W5500/w5500.h
+c8t6_w5500\do_dns.o: .\User\ioLibrary_Driver\Ethernet\wizchip_conf.h
+c8t6_w5500\do_dns.o: User\wiz_interface.h
