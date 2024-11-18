@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"led_flow\startup_stm32f103xb.o"
+"led_flow\main.o"
+"led_flow\gpio.o"
+"led_flow\usart.o"
+"led_flow\stm32f1xx_it.o"
+"led_flow\stm32f1xx_hal_msp.o"
+"led_flow\stm32f1xx_hal_gpio_ex.o"
+"led_flow\stm32f1xx_hal_tim.o"
+"led_flow\stm32f1xx_hal_tim_ex.o"
+"led_flow\stm32f1xx_hal_uart.o"
+"led_flow\stm32f1xx_hal.o"
+"led_flow\stm32f1xx_hal_rcc.o"
+"led_flow\stm32f1xx_hal_rcc_ex.o"
+"led_flow\stm32f1xx_hal_gpio.o"
+"led_flow\stm32f1xx_hal_dma.o"
+"led_flow\stm32f1xx_hal_cortex.o"
+"led_flow\stm32f1xx_hal_pwr.o"
+"led_flow\stm32f1xx_hal_flash.o"
+"led_flow\stm32f1xx_hal_flash_ex.o"
+"led_flow\stm32f1xx_hal_exti.o"
+"led_flow\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "led_flow\led_flow.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "led_flow.map" -o led_flow\led_flow.axf

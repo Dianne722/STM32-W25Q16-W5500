@@ -15,7 +15,7 @@ uint8_t flag;
 uint32_t HTTP_GetPkt(uint8_t *pkt)
 {
     *pkt = 0;
-    strcat((char*)pkt, "GET /upload/1044388490.bin HTTP/1.1\r\n");
+    strcat((char*)pkt, "GET /upload/771004961.bin HTTP/1.1\r\n");
     strcat((char*)pkt, "Host: www.ibinhub.com");
     strcat((char*)pkt, "\r\n\r\n");
 
