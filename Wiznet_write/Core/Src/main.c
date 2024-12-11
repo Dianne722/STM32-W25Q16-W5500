@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "user_main.h"
+#include "Bootloader.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -93,9 +94,19 @@ int main(void)
   MX_USART1_UART_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-	user_run();
-  /* USER CODE END 2 */
-
+	
+    //system_reset();
+	  iap_load_app();	//跳转到APP的首地址
+		
+		user_run();
+  
+		
+		// 软复位
+		
+		
+		
+		/* USER CODE END 2 */
+    
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)

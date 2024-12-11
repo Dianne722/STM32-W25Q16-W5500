@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+"boot\startup_stm32f103xb.o"
+"boot\main.o"
+"boot\gpio.o"
+"boot\usart.o"
+"boot\stm32f1xx_it.o"
+"boot\stm32f1xx_hal_msp.o"
+"boot\stm32f1xx_hal_gpio_ex.o"
+"boot\stm32f1xx_hal_tim.o"
+"boot\stm32f1xx_hal_tim_ex.o"
+"boot\stm32f1xx_hal_uart.o"
+"boot\stm32f1xx_hal.o"
+"boot\stm32f1xx_hal_rcc.o"
+"boot\stm32f1xx_hal_rcc_ex.o"
+"boot\stm32f1xx_hal_gpio.o"
+"boot\stm32f1xx_hal_dma.o"
+"boot\stm32f1xx_hal_cortex.o"
+"boot\stm32f1xx_hal_pwr.o"
+"boot\stm32f1xx_hal_flash.o"
+"boot\stm32f1xx_hal_flash_ex.o"
+"boot\stm32f1xx_hal_exti.o"
+"boot\system_stm32f1xx.o"
+"boot\leaf_ota.o"
+--library_type=microlib --strict --scatter "boot\boot.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "boot.map" -o boot\boot.axf

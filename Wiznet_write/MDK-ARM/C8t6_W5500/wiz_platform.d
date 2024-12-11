@@ -1,9 +1,9 @@
 c8t6_w5500\wiz_platform.o: User\wiz_platform.c
 c8t6_w5500\wiz_platform.o: User\wiz_platform.h
 c8t6_w5500\wiz_platform.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
-c8t6_w5500\wiz_platform.o: .\User\ioLibrary_Driver\Ethernet\wizchip_conf.h
-c8t6_w5500\wiz_platform.o: .\User\ioLibrary_Driver\Ethernet\W5500/w5500.h
-c8t6_w5500\wiz_platform.o: .\User\ioLibrary_Driver\Ethernet\wizchip_conf.h
+c8t6_w5500\wiz_platform.o: ./User/ioLibrary_Driver/Ethernet/wizchip_conf.h
+c8t6_w5500\wiz_platform.o: ./User/ioLibrary_Driver/Ethernet/W5500/w5500.h
+c8t6_w5500\wiz_platform.o: ./User/ioLibrary_Driver/Ethernet/wizchip_conf.h
 c8t6_w5500\wiz_platform.o: ../Core/Inc/main.h
 c8t6_w5500\wiz_platform.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 c8t6_w5500\wiz_platform.o: ../Core/Inc/stm32f1xx_hal_conf.h

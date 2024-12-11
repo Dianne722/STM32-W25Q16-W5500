@@ -34,6 +34,7 @@
 "c8t6_w5500\wiz_platform.o"
 "c8t6_w5500\do_dns.o"
 "c8t6_w5500\httpclient.o"
+"c8t6_w5500\bootloader.o"
 --library_type=microlib --strict --scatter "C8t6_W5500\C8t6_W5500.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

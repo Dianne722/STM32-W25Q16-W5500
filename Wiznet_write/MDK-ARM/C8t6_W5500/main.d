@@ -33,4 +33,5 @@ c8t6_w5500\main.o: ../Core/Inc/spi.h
 c8t6_w5500\main.o: ../Core/Inc/tim.h
 c8t6_w5500\main.o: ../Core/Inc/usart.h
 c8t6_w5500\main.o: ../Core/Inc/gpio.h
-c8t6_w5500\main.o: .\User\user_main.h
+c8t6_w5500\main.o: ./User/user_main.h
+c8t6_w5500\main.o: ./User/Bootloader.h

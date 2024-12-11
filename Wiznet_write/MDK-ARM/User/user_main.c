@@ -6,13 +6,13 @@
 #include "do_dns.h"
 #include "httpclient.h"
 
-/* wizchip->STM32 Hardware Pin define */
-//  wizchip_SCS    --->     STM32_GPIOD7
-//  wizchip_SCLK   --->     STM32_GPIOB13
-//  wizchip_MISO   --->     STM32_GPIOB14
-//  wizchip_MOSI   --->     STM32_GPIOB15
-//  wizchip_RESET  --->     STM32_GPIOD8
-//  wizchip_INT    --->     STM32_GPIOD9
+/*wizchip->STM32 Hardware Pin define*/
+//	wizchip_SCS    --->     STM32_GPIOA4
+//	wizchip_SCLK	 --->     STM32_GPIOA5
+//  wizchip_MISO	 --->     STM32_GPIOA6
+//	wizchip_MOSI	 --->     STM32_GPIOA7
+//	wizchip_RESET	 --->     STM32_GPIOC15
+//	wizchip_INT    --->     STM32_GPIOC14
 
 /* network information */
 wiz_NetInfo default_net_info = {

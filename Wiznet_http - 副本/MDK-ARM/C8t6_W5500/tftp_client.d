@@ -1,0 +1,9 @@
+c8t6_w5500\tftp_client.o: User\tftp_client.c
+c8t6_w5500\tftp_client.o: User\tftp_client.h
+c8t6_w5500\tftp_client.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+c8t6_w5500\tftp_client.o: .\User\ioLibrary_Driver\Internet\TFTP\tftp.h
+c8t6_w5500\tftp_client.o: .\User\ioLibrary_Driver\Internet\TFTP\netutil.h
+c8t6_w5500\tftp_client.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+c8t6_w5500\tftp_client.o: .\User\ioLibrary_Driver\Ethernet\wizchip_conf.h
+c8t6_w5500\tftp_client.o: .\User\ioLibrary_Driver\Ethernet\W5500/w5500.h
+c8t6_w5500\tftp_client.o: .\User\ioLibrary_Driver\Ethernet\wizchip_conf.h
